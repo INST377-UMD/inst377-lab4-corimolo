@@ -1,0 +1,82 @@
+<html>
+
+<head> 
+<title>LAB 4 with JS</title>
+<link rel = "stylesheet" href="instlab4html-css.css">
+</head>
+
+<body id = 'body'>
+<h1 id=" heading">INST377 Lab</h1>
+
+<!--MAIN CONTENT-->
+<div class = "main-container">
+    <div class = "content-area">
+        <div class = "content-box">
+    <form name="info" onsubmit="formValidation()">
+        <label for = "Name"> Name: </label>
+        <input type="text" id = "Name" required>
+        <input type = "submit" value = "Alert me!">
+</form>
+</div>
+
+       
+</div>
+<aside id = "colorchange">
+<button onclick= "changeColor()">Change Color</button>
+</aside>
+
+<aside id = "Texttester">
+<form name=" texttesting" onsubmit="return Special()">
+    <label for = "Text tester"> Text tester:</label>
+    <input type ="text" class = "test" id="Text tester">
+    <input type = "submit" value = "Validate text">
+</form>
+</aside>
+</div>
+
+</div>
+<aside id = "AddText">
+<input type = "button" value = "Add Text" onclick="Textadd()">
+</aside>
+</div>
+
+</body>
+<script type = "text/javascript">
+    function changeColor(){
+        if (document.getElementById('body').style.backgroundColor == 'violet') {
+            const t = document.getElementById('body').style.backgroundColor ='lightpink'; }
+            else{
+        const t = document.getElementById('body').style.backgroundColor ='violet'; }};
+         
+</script>
+
+<script type="text/javascript">
+function formValidation() {
+    var alertThing = document.getElementById("Name").value;
+    alert("Hi!" + alertThing);
+    return false;
+};
+
+</script> 
+
+<script type="text/javascript">
+function Textadd(){
+var addTexts = document.querySelector("#heading");
+addTexts.textContent += "Hello";
+};
+
+
+</script>
+
+
+
+<script type="text/javascript">
+function Special(){ var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+var inputElement = document.querySelector('.test');
+if (inputElement && validation.test(inputElement.value) ) 
+      {alert("No special characters allowed");};
+    return false};
+</script> 
+
+
+</html>
